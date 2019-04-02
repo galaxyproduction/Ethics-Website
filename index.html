@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Home</title>
+  <meta name="description" content="Hunter Wilkins Portfolio">
+  <meta name="author" content="Hunter Wilkins">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="scripts/anime.min.js"></script>
+</head>
+
+<body>
+  <section id="home" class="hero is-fullheight" style="background-color: #28356d">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title intro" style="color: #f9d248">
+          FB
+        </h1>
+        <div class="iphonex">
+          <div class="video-container">
+            <video autoplay muted loop id="myVideo" class="video disappear">
+              <source src="photos/news.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <script>
+          $(window).scroll(function() {
+            if ($(document).scrollTop() + 50 > $(window).outerHeight()) {
+              $('video').removeClass('disappear');
+              console.log("Added class");
+            } else {
+              $('video').addClass('disappear');
+            }
+            var animation = anime({
+              targets: '.iphonex',
+              translateY: ['-50%', '85%'],
+              translateX: ['75%', '-50%'],
+              rotate: [0, -90],
+              scale: [1, 1.5],
+              duration: 1000,
+              easing: 'linear',
+              autoplay: false
+            });
+            var scrollPercent = $(document).scrollTop() / ($(window).outerHeight() - 50);
+            console.log(scrollPercent);
+            animation.seek(scrollPercent * animation.duration);
+          });
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero has-background-gray is-fullheight has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+      </div>
+    </div>
+  </section>
+
+  <section class="hero has-background-primary is-fullheight has-text-centered">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu has-background-light">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">
+            Home
+          </a>
+
+          <a class="navbar-item" href="social.html">
+            Social Contract Theory
+          </a>
+
+          <a class="navbar-item">
+            Virtue Ethics
+          </a>
+
+          <a class="navbar-item">
+            Act Utilitarian
+          </a>
+
+        </div>
+      </div>
+    </nav>
+    <div class="hero-body">
+      <div class="container">
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Apple v. FBI</p>
+              <p class="subtitle">A federal judge asked Apple to unlock the iphone of the San Bernardino shooter. The judge asked Apple to provide “reasonable technical assistance” to the U.S. authorities, which would require the technology giant to overhaul the system that disables the phone after 10 unsuccessful password attempts. Once this feature kicks in, all the data on the phone is inaccessible. Apple declined to help the FBI.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tile is-ancestor">
+          <div class="tile">
+              <div class="tile is-parent">
+                <article class="tile is-child box">
+                  <figure class="image is-4by3">
+                    <img src="photos/tim_cook.jpg">
+                  </figure>
+                  <p class="title">Tim Cook</p>
+                  <p class="subtitle">“The implications of the government’s demands are chilling. If the government can use the All Writs Act to make it easier to unlock your iPhone, it would have the power to reach into anyone’s device to capture their data.”</p>
+                </article>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">What was the result?</p>
+              <p class="subtitle">The FBI found a third-party to unlock the phone. The FBI refused to disclose the "techinal aspects" of unlocking the phone and the third-party that helped them.</p>
+              <p class="subtitle">Apple said in a statement, "Apple will continue to help law enforcement with their investigations, as we have done all along, and we will continue to increase the security of our products as the threats and attacks on our data"</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
